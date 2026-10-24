@@ -1,0 +1,140 @@
+<!-- index.html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum JavaScript</title>
+</head>
+
+<body>
+    <h1>Pengenalan JavaScript</h1>
+    <p id="pesan">Konten awal.</p>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<button type="button" onclick="ubahTampilan()">Ubah Tampilan</button>
+
+<label for="bilangan">Masukkan bilangan bulat:</label>
+<input type="number" id="bilangan" step="1">
+<button type="button" onclick="cekBilangan()">Periksa</button>
+<p id="hasilBilangan"></p>
+
+<button type="button" onclick="ubahWarnaLatar('lightgreen')">Latar Hijau</button>
+<button type="button" onclick="ubahWarnaLatar('white')">Latar Putih</button>
+<button type="button" onclick="ubahWarnaLatar('lightyellow')">Latar Kuning</button>
+
+<h3>Daftar Menu Makanan</h3>
+<label><input type="checkbox" class="menu" value="5000"> Ayam Goreng — Rp5.000</label><br>
+<label><input type="checkbox" class="menu" value="500"> Tempe — Rp500</label><br>
+<label><input type="checkbox" class="menu" value="2500"> Telur Dadar — Rp2.500</label><br>
+<p>Total: Rp<span id="total">0</span></p> -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Nilai</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .form-group { margin-bottom: 15px; }
+        .hasil-box { margin-top: 20px; padding: 15px; background-color: #f0f0f0; display: none; width: 250px; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Form Penilaian Mahasiswa</h2>
+    
+    <!-- Form Input -->
+    <form id="formNilai">
+        <div class="form-group">
+            <label>Nilai Tugas (0-100):</label><br>
+            <input type="number" id="tugas" min="0" max="100" required>
+        </div>
+        <div class="form-group">
+            <label>Nilai UTS (0-100):</label><br>
+            <input type="number" id="uts" min="0" max="100" required>
+        </div>
+        <div class="form-group">
+            <label>Nilai UAS (0-100):</label><br>
+            <input type="number" id="uas" min="0" max="100" required>
+        </div>
+        <button type="button" onclick="prosesTampilan()">Hitung Nilai</button>
+    </form>
+
+    <!-- Pesan Error -->
+    <p id="pesanError" class="error"></p>
+
+    <!-- Area Hasil -->
+    <div id="areaHasil" class="hasil-box">
+        <p><strong>Nilai Akhir:</strong> <span id="outAkhir"></span></p>
+        <p><strong>Predikat:</strong> <span id="outPredikat"></span></p>
+        <p><strong>Status:</strong> <span id="outStatus"></span></p>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. FUNGSI LOGIKA (Pemrosesan Data)
+        // ==========================================
+        function hitungNilaiAkhir(tugas, uts, uas) {
+            return (tugas * 0.30) + (uts * 0.30) + (uas * 0.40);
+        }
+
+        function tentukanPredikat(nilai) {
+            if (nilai >= 85) return "A";
+            if (nilai >= 75) return "B";
+            if (nilai >= 60) return "C";
+            if (nilai >= 50) return "D";
+            return "E";
+        }
+
+        function validasiInput(nilai) {
+            return nilai !== "" && nilai >= 0 && nilai <= 100;
+        }
+
+        // ==========================================
+        // 2. FUNGSI TAMPILAN (Interaksi dengan HTML)
+        // ==========================================
+        function prosesTampilan() {
+            // Ambil data dari form HTML
+            const inputTugas = document.getElementById("tugas").value;
+            const inputUts = document.getElementById("uts").value;
+            const inputUas = document.getElementById("uas").value;
+            
+            const pesanError = document.getElementById("pesanError");
+            const areaHasil = document.getElementById("areaHasil");
+
+            // Reset tampilan
+            pesanError.innerText = "";
+            areaHasil.style.display = "none";
+
+            // Validasi Input (0 - 100)
+            if (!validasiInput(inputTugas) || !validasiInput(inputUts) || !validasiInput(inputUas)) {
+                pesanError.innerText = "Error: Pastikan semua nilai diisi dengan angka antara 0 hingga 100!";
+                return;
+            }
+
+            // Jalankan perhitungan logika
+            const nilaiAkhir = hitungNilaiAkhir(Number(inputTugas), Number(inputUts), Number(inputUas));
+            const predikat = tentukanPredikat(nilaiAkhir);
+            const status = nilaiAkhir >= 60 ? "Lulus" : "Belum lulus";
+
+            // Tampilkan hasil ke HTML
+            document.getElementById("outAkhir").innerText = nilaiAkhir.toFixed(2);
+            document.getElementById("outPredikat").innerText = predikat;
+            document.getElementById("outStatus").innerText = status;
+            
+            // Ubah warna teks status lulus/belum lulus
+            document.getElementById("outStatus").style.color = status === "Lulus" ? "green" : "red";
+            
+            // Munculkan kotak hasil
+            areaHasil.style.display = "block";
+        }
+    </script>
+</body>
+</html>
