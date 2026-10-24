@@ -51,8 +51,33 @@ Meminta input dari pengguna berupa Nama, Nilai, dan Angka melalui pop-up `prompt
   ![Switch Case](Screenshot%20(75).jpg)
 
 ### 3. Manipulasi DOM (Interaksi Tombol dan Pengecekan Bilangan)
-Latihan memanipulasi elemen HTML. Pengguna dapat mengecek apakah bilangan yang dimasukkan bernilai ganjil/genap dan mengubah warna latar belakang secara
+Latihan memanipulasi elemen HTML. Pengguna dapat mengecek apakah bilangan yang dimasukkan bernilai ganjil/genap dan mengubah warna latar belakang secara interaktif.
+- **Tampilan Awal & Pengecekan Bilangan Ganjil/Genap:**
+  <br>
+  ![Cek Bilangan Awal](Screenshot%20(76).jpg)
+  <br>
+  ![Input Bilangan](Screenshot%20(78).jpg)
+  <br>
+  ![Hasil Bilangan Ganjil](Screenshot%20(79).jpg)
+  <br>
+  ![Hasil Bilangan Genap](Screenshot%20(80).jpg)
 
+- **Mengubah Warna Latar (Contoh: Menjadi Hijau):**
+  <br>
+  ![Latar Hijau](Screenshot%20(77).jpg)
+
+### 4. Daftar Menu Makanan (Checkboxes)
+Menambahkan elemen form berupa *checkbox* untuk daftar menu makanan beserta harganya yang nantinya dapat digunakan untuk kalkulasi total pembayaran.
+![Daftar Menu Makanan](Screenshot%20(81).jpg)
+
+### 5. Form Penilaian Mahasiswa (Kalkulator Nilai)
+Implementasi form interaktif lengkap untuk menghitung Nilai Akhir mahasiswa dari komponen Tugas, UTS, dan UAS. Logika JavaScript akan mengambil *value* input, menghitung bobotnya, menentukan predikat (A, B, dsb), dan menampilkan status kelulusan dengan penyesuaian warna (hijau untuk "Lulus", merah untuk "Belum lulus").
+- **Tampilan Form Kalkulator Nilai:**
+  <br>
+  ![Form Kosong](Screenshot%20(83).jpg)
+- **Hasil Kalkulasi Setelah Form Diisi:**
+  <br>
+  ![Form Terisi dan Dihitung](Screenshot%20(84).jpg)
 
 <img width="1366" height="768" alt="Screenshot (83)" src="https://github.com/user-attachments/assets/8d0d4e73-12fd-49d5-84a9-4ef0cbd0c543" />
 <img width="1366" height="768" alt="Screenshot (81)" src="https://github.com/user-attachments/assets/66249376-d166-42eb-b4ad-b199e3aa8dfc" />
