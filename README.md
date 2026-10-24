@@ -2,7 +2,7 @@ Praktikum Pengenalan JavaScript (Lab 5)
 
 Repositori ini berisi kumpulan latihan praktikum dasar JavaScript. Latihan-latihan ini mencakup manipulasi DOM dasar, pengambilan input dari pengguna, penggunaan struktur kontrol (percabangan), penanganan event pada elemen HTML, hingga pembuatan kalkulator sederhana.
 
-🎯 Tujuan Pembelajaran
+Tujuan Pembelajaran
 
 Memahami cara menautkan file JavaScript ke dalam dokumen HTML.
 
@@ -16,7 +16,7 @@ Menerapkan Event Handling dasar (seperti onclick, onchange) pada elemen interakt
 
 Membangun form kalkulasi dinamis untuk menghitung total nilai dan menampilkan status berdasarkan kondisi tertentu.
 
-🚀 Cara Menjalankan
+Cara Menjalankan
 
 Pastikan Anda memiliki text editor (misalnya Visual Studio Code) dan web browser (Chrome, Edge, Firefox, dll).
 
@@ -26,7 +26,7 @@ Buka file index.html langsung di browser dengan cara klik ganda (double-click) p
 
 Opsional tapi Disarankan: Gunakan ekstensi Live Server di VS Code untuk menjalankan file secara langsung dan melihat perubahannya secara real-time saat kode disimpan.
 
-📝 Daftar Latihan dan Hasil
+Daftar Latihan dan Hasil
 
 1. Output Dasar dan Manipulasi DOM (Hello World)
 
